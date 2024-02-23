@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    /* Asegura que el posicionamiento absoluto funcione correctamente */
+    background-image: url("./images/espacio.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Ajusta el color y la opacidad del fondo oscuro */
+    z-index: -1;
+    /* Asegura que la capa esté detrás del contenido */
+}
+
+
+.contenedor {
+    width: 100%;
+    height: 800vh;
+    text-align: center;
+    overflow: hidden;
+    max-width: 100vw;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+h1 {
+    /* font-family: Arial, Helvetica, sans-serif;
+    color: rgb(51, 118, 128);
+    padding-top: 50px;
+    font-size: 3rem; */
+    display: none;
+}
+
+.contenedor__animacion {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    /* border: 1px solid red; */
+}
+
+img {
+    object-fit: cover;
+}
+
+.nave-fuego {
+    position: absolute;
+    top: 80px;
+    left: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9;
+    rotate: -50deg;
+
+}
+
+.nave {
+    width: 50px;
+    rotate: 180deg;
+    z-index: 9;
+    margin-top: -50px;
+}
+
+.fuego {
+    width: 50px;
+    margin-top: -50px;
+}
+
+.planeta {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+}
+
+.planeta1 {
+    width: 500px;
+    height: 500px;
+    opacity: 1;
+    left: -100px;
+    top: -100px;
+}
+
+.luna {
+    width: 300px;
+    height: 300px;
+    opacity: 1;
+    right: 0;
+    top: 100vh;
+}
+
+@media(max-width:767px) {
+    .nave {
+        width: 20px;
+        rotate: 180deg;
+        z-index: 9;
+        margin-top: -20px;
+    }
+
+    .fuego {
+        width: 20px;
+        /* margin-top: -50px; */
+    }
+
+    .contenedor {
+        width: 100%;
+        height: 600vh;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .planeta1 {
+        width: 500px;
+        height: 500px;
+        opacity: 1;
+        left: -150px;
+        top: -100px;
+    }
+
+    .nave-fuego {
+        position: absolute;
+        top: 80px;
+        left: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 9;
+        rotate: -20deg;
+    }
+
+    .luna {
+        width: 300px;
+        height: 300px;
+        opacity: 1;
+        right: -100px;
+        top: 200vh;
+    }
+}
